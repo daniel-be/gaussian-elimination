@@ -28,7 +28,6 @@ int main()
 	{
 		std::cout << "x" << i << " = " << sol[i] << std::endl;
 	}
-	std::cin.get();
 	return 0;
 }
 
@@ -42,8 +41,7 @@ void gaussian_elimination(Matrix<M, N>& m)
 			double mult = -(m.m[j][i] / m.m[i][i]);
 			for (int k = 0; k < N; k++)
 			{
-				double nw = m.m[j][k] + m.m[i][k] * mult;
-				m.m[j][k] = nw;
+				m.m[j][k] = m.m[j][k] + m.m[i][k] * mult;
 			}
 		}
 	}
